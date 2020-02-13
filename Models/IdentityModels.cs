@@ -29,5 +29,27 @@ namespace Airport.Models
         {
             return new ApplicationDbContext();
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Personne>()
+                        .HasMany<Reservation>(s => s.Reservations)
+                        .WithMany(c => c.Personnes)
+                        .Map(cs =>
+                        {
+                            cs.MapLeftKey("PersonneId");
+                            cs.MapRightKey("ReservationId");
+                            cs.ToTable("PersonneReservation");
+                        });
+
+        }
+
+        public System.Data.Entity.DbSet<Airport.Models.Personne> Personnes { get; set; }
+
+        public System.Data.Entity.DbSet<Airport.Models.RolePersonne> RolePersonnes { get; set; }
+
+        public System.Data.Entity.DbSet<Airport.Models.Reservation> Reservations { get; set; }
     }
 }

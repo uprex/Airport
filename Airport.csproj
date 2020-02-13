@@ -170,12 +170,27 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PersonneController.cs" />
+    <Compile Include="Controllers\ReservationController.cs" />
+    <Compile Include="Controllers\RolePersonneController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002130828433_InitialCreate.cs" />
+    <Compile Include="Migrations\202002130828433_InitialCreate.Designer.cs">
+      <DependentUpon>202002130828433_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002130844088_oui.cs" />
+    <Compile Include="Migrations\202002130844088_oui.Designer.cs">
+      <DependentUpon>202002130844088_oui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Personne.cs" />
+    <Compile Include="Models\Reservation.cs" />
+    <Compile Include="Models\RolePersonne.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -235,6 +250,21 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\RolePersonne\Create.cshtml" />
+    <Content Include="Views\RolePersonne\Delete.cshtml" />
+    <Content Include="Views\RolePersonne\Details.cshtml" />
+    <Content Include="Views\RolePersonne\Edit.cshtml" />
+    <Content Include="Views\RolePersonne\Index.cshtml" />
+    <Content Include="Views\Personne\Create.cshtml" />
+    <Content Include="Views\Personne\Delete.cshtml" />
+    <Content Include="Views\Personne\Details.cshtml" />
+    <Content Include="Views\Personne\Edit.cshtml" />
+    <Content Include="Views\Personne\Index.cshtml" />
+    <Content Include="Views\Reservation\Create.cshtml" />
+    <Content Include="Views\Reservation\Delete.cshtml" />
+    <Content Include="Views\Reservation\Details.cshtml" />
+    <Content Include="Views\Reservation\Edit.cshtml" />
+    <Content Include="Views\Reservation\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -251,6 +281,14 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202002130828433_InitialCreate.resx">
+      <DependentUpon>202002130828433_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002130844088_oui.resx">
+      <DependentUpon>202002130844088_oui.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
